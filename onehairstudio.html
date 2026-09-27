@@ -1,0 +1,2635 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ONE HAIRSTUDIO — Home Service</title>
+
+    <meta
+    name="description"
+    content="ONE HAIRSTUDIO — Home Service barber & hair studio. Potong rambut di tempat Anda. Mulai dari Rp50K."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+    rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+:root {
+        --beige: #d8cbb9;
+        --beige-light: #e4d9c9;
+        --beige-deep: #c6b49d;
+
+        --brown-soft: #806b55;
+        --brown: #5f4b39;
+        --brown-deep: #403227;
+
+        --black-soft: #27231f;
+        --black: #11100f;
+
+        --cream: #f2ebdf;
+        --cream-soft: #e9dfd0;
+
+        --white: #faf7f1;
+
+        --text: #211c17;
+        --muted: #766c61;
+
+        --line: rgba(65, 51, 40, .18);
+        --line-dark: rgba(242, 235, 223, .18);
+
+        --radius-xl: 52px;
+        --radius-lg: 40px;
+        --radius-md: 28px;
+        --radius-sm: 18px;
+        --radius-pill: 999px;
+
+        --container: 1400px;
+
+        --ease: cubic-bezier(.22, .61, .36, 1);
+    }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            min-width: 320px;
+            background: var(--cream);
+            color: var(--text);
+
+            font-family: "DM Sans", sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+
+            overflow-x: hidden;
+        }
+
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+        }
+
+
+        button {
+            cursor: pointer;
+        }
+
+
+        ::selection {
+            background: var(--brown);
+            color: var(--cream);
+        }
+
+
+        /* =========================================
+   NAVIGATION
+========================================= */
+
+        .nav {
+            position: fixed;
+            z-index: 1000;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+
+            padding: 22px 5vw;
+
+            color: var(--black-soft);
+
+            transition:
+            background .35s var(--ease),
+            padding .35s var(--ease),
+            box-shadow .35s var(--ease),
+            color .35s var(--ease);
+        }
+
+
+        .nav.scrolled {
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            background: rgba(242, 235, 223, .88);
+
+            box-shadow:
+            0 12px 40px rgba(39, 35, 31, .08);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+
+        .brand {
+            justify-self: start;
+
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+        }
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+        }
+
+
+        .nav-links a {
+            position: relative;
+
+            font-size: .7rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+
+            color: var(--brown);
+
+            transition: color .25s ease;
+        }
+
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -6px;
+
+            width: 0;
+            height: 1px;
+
+            background: currentColor;
+
+            transition: width .3s var(--ease);
+        }
+
+
+        .nav-links a:hover {
+            color: var(--black);
+        }
+
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        .nav-book {
+            justify-self: end;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 42px;
+            padding: 0 20px;
+
+            border-radius: var(--radius-pill);
+
+            background: var(--black-soft);
+            color: var(--cream);
+
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+
+            transition:
+            transform .25s ease,
+            background .25s ease;
+        }
+
+
+        .nav-book:hover {
+            transform: translateY(-2px);
+            background: var(--brown-deep);
+        }
+
+
+        /* =========================================
+   GLOBAL
+========================================= */
+
+        .page {
+            width: 100%;
+            overflow: hidden;
+        }
+
+
+        main {
+            width: 100%;
+        }
+
+
+        section {
+            position: relative;
+        }
+
+
+        .section-label {
+            display: inline-block;
+
+            margin-bottom: 18px;
+
+            color: var(--brown-soft);
+
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+        }
+
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 500;
+        }
+
+
+        h1,
+        h2 {
+            font-family: "Playfair Display", serif;
+        }
+
+
+        em {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+
+        /* =========================================
+   HERO
+========================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: grid;
+            grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr);
+            gap: clamp(40px, 7vw, 110px);
+
+            align-items: center;
+
+            padding:
+            150px 5vw
+            90px;
+
+            background:
+            radial-gradient(
+            circle at 15% 25%,
+            rgba(255, 255, 255, .22),
+            transparent 30%
+            ),
+            var(--beige);
+        }
+
+
+        .hero-copy {
+            max-width: 650px;
+        }
+
+
+        .eyebrow {
+            display: block;
+
+            margin-bottom: 25px;
+
+            color: var(--brown-soft);
+
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+        }
+
+
+        .hero h1 {
+            max-width: 680px;
+
+            margin-bottom: 28px;
+
+            font-size: clamp(4rem, 7vw, 8rem);
+            line-height: .9;
+            letter-spacing: -.055em;
+
+            color: var(--black-soft);
+        }
+
+
+        .hero h1 em {
+            display: block;
+            color: var(--brown);
+        }
+
+
+        .hero-copy > p {
+            max-width: 490px;
+
+            margin-bottom: 36px;
+
+            color: var(--brown);
+
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 60px;
+        }
+
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 52px;
+            padding: 0 25px;
+
+            border-radius: var(--radius-pill);
+
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+
+            transition:
+            transform .25s ease,
+            background .25s ease,
+            color .25s ease;
+        }
+
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+
+        .button-dark {
+            background: var(--black-soft);
+            color: var(--cream);
+        }
+
+
+        .button-dark:hover {
+            background: var(--brown-deep);
+        }
+
+
+        .button-light {
+            border: 1px solid var(--line);
+            color: var(--brown);
+        }
+
+
+        .button-light:hover {
+            background: rgba(255, 255, 255, .2);
+        }
+
+
+        .hero-meta {
+            display: flex;
+            gap: 45px;
+        }
+
+
+        .hero-meta div {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+
+        .hero-meta strong {
+            color: var(--black-soft);
+
+            font-family: "Playfair Display", serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+
+        .hero-meta span {
+            color: var(--brown-soft);
+
+            font-size: .65rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+
+        .hero-image {
+            position: relative;
+
+            min-height: 680px;
+
+            overflow: visible;
+        }
+
+
+        .hero-image img {
+            width: 100%;
+            height: 680px;
+
+            object-fit: cover;
+
+            border-radius:
+            180px
+            180px
+            28px
+            28px;
+        }
+
+
+        .price-tag {
+            position: absolute;
+
+            right: -25px;
+            bottom: 45px;
+
+            width: 125px;
+            height: 125px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--black-soft);
+            color: var(--cream);
+
+            transform: rotate(8deg);
+
+            box-shadow:
+            0 18px 45px rgba(17, 16, 15, .2);
+        }
+
+
+        .price-tag span {
+            font-size: .52rem;
+            letter-spacing: .16em;
+        }
+
+
+        .price-tag strong {
+            font-family: "Playfair Display", serif;
+            font-size: 1.65rem;
+            font-weight: 500;
+        }
+
+
+        /* =========================================
+   IMAGE FLOW
+========================================= */
+
+        .image-flow {
+            min-height: 900px;
+
+            display: grid;
+            grid-template-columns: 1.35fr .65fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 25px;
+
+            padding: 8vw 5vw;
+
+            background: var(--cream);
+        }
+
+
+        .image-flow-main {
+            grid-row: 1 / 3;
+
+            overflow: hidden;
+
+            border-radius:
+            35px
+            110px
+            35px
+            35px;
+        }
+
+
+        .image-flow-main img {
+            height: 100%;
+            min-height: 750px;
+            object-fit: cover;
+
+            transition: transform .8s var(--ease);
+        }
+
+
+        .image-flow-small {
+            overflow: hidden;
+
+            border-radius: 35px;
+        }
+
+
+        .image-flow-small img {
+            height: 100%;
+            object-fit: cover;
+
+            transition: transform .8s var(--ease);
+        }
+
+
+        .image-flow-small:hover img,
+        .image-flow-main:hover img {
+            transform: scale(1.035);
+        }
+
+
+        .image-flow-small-top {
+            border-radius:
+            35px
+            35px
+            100px
+            35px;
+        }
+
+
+        .image-flow-small-bottom {
+            border-radius:
+            35px
+            35px
+            35px
+            100px;
+        }
+
+
+        /* =========================================
+   HOME SERVICE
+========================================= */
+
+        .home-service {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: clamp(50px, 8vw, 130px);
+
+            align-items: center;
+
+            padding: 9vw 8vw;
+
+            background: var(--beige-light);
+        }
+
+
+        .home-service-copy {
+            max-width: 610px;
+        }
+
+
+        .home-service h2 {
+            margin-bottom: 28px;
+
+            font-size: clamp(3rem, 5.5vw, 6rem);
+            line-height: .94;
+            letter-spacing: -.045em;
+
+            color: var(--black-soft);
+        }
+
+
+        .home-service h2 em {
+            display: block;
+            color: var(--brown);
+        }
+
+
+        .home-service-copy > p {
+            max-width: 500px;
+
+            margin-bottom: 50px;
+
+            color: var(--brown);
+
+            line-height: 1.8;
+        }
+
+
+        .service-points {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .service-points > div {
+            display: grid;
+            grid-template-columns: 45px 1fr;
+
+            gap: 8px 20px;
+
+            padding: 20px 0;
+
+            border-top: 1px solid var(--line);
+        }
+
+
+        .service-points > div:last-child {
+            border-bottom: 1px solid var(--line);
+        }
+
+
+        .service-points span {
+            grid-row: 1 / 3;
+
+            color: var(--brown-soft);
+
+            font-size: .7rem;
+            letter-spacing: .1em;
+        }
+
+
+        .service-points strong {
+            font-size: .85rem;
+            font-weight: 700;
+        }
+
+
+        .service-points p {
+            color: var(--muted);
+
+            font-size: .82rem;
+        }
+
+
+        .text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+
+            margin-top: 38px;
+
+            color: var(--black-soft);
+
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .13em;
+
+            border-bottom: 1px solid var(--black-soft);
+            padding-bottom: 6px;
+
+            transition: gap .3s var(--ease);
+        }
+
+
+        .text-link:hover {
+            gap: 22px;
+        }
+
+
+        .home-service-image {
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius:
+            150px
+            35px
+            150px
+            35px;
+        }
+
+
+        .home-service-image img {
+            height: 750px;
+
+            object-fit: cover;
+        }
+
+
+        /* =========================================
+   SERVICES
+========================================= */
+
+        .services {
+            padding: 10vw 8vw;
+
+            background: var(--cream);
+        }
+
+
+        .section-intro {
+            display: grid;
+            grid-template-columns: .6fr 1.4fr;
+
+            align-items: end;
+
+            margin-bottom: 70px;
+        }
+
+
+        .section-intro h2 {
+            max-width: 800px;
+
+            font-size: clamp(3.2rem, 6vw, 7rem);
+            line-height: .9;
+            letter-spacing: -.055em;
+
+            color: var(--black-soft);
+        }
+
+
+        .section-intro h2 em {
+            color: var(--brown);
+        }
+
+
+        .service-list {
+            border-top: 1px solid var(--line);
+        }
+
+
+        .service-item {
+            display: grid;
+            grid-template-columns: 70px 1fr auto;
+
+            align-items: center;
+            gap: 30px;
+
+            padding: 35px 0;
+
+            border-bottom: 1px solid var(--line);
+
+            transition:
+            padding .35s var(--ease),
+            background .35s ease;
+        }
+
+
+        .service-item:hover {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+
+        .service-number {
+            color: var(--brown-soft);
+
+            font-size: .7rem;
+            letter-spacing: .1em;
+        }
+
+
+        .service-item h3 {
+            margin-bottom: 5px;
+
+            font-family: "Playfair Display", serif;
+            font-size: 1.8rem;
+        }
+
+
+        .service-item p {
+            color: var(--muted);
+
+            font-size: .85rem;
+        }
+
+
+        .service-item > strong {
+            color: var(--brown);
+
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+        }
+
+
+        /* =========================================
+   PRICING
+========================================= */
+
+        .pricing {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 10vw;
+
+            padding: 9vw 8vw;
+
+            background: var(--beige);
+        }
+
+
+        .pricing-copy h2 {
+            margin-bottom: 25px;
+
+            font-size: clamp(3rem, 5vw, 5.5rem);
+            line-height: .92;
+            letter-spacing: -.05em;
+        }
+
+
+        .pricing-copy h2 em {
+            display: block;
+            color: var(--brown);
+        }
+
+
+        .pricing-copy p {
+            max-width: 420px;
+
+            color: var(--brown);
+
+            line-height: 1.8;
+        }
+
+
+        .pricing-list {
+            border-top: 1px solid var(--line);
+        }
+
+
+        .pricing-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+
+            padding: 25px 0;
+
+            border-bottom: 1px solid var(--line);
+        }
+
+
+        .pricing-row span {
+            font-size: .95rem;
+        }
+
+
+        .pricing-row strong {
+            color: var(--brown);
+
+            font-family: "Playfair Display", serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+
+        /* =========================================
+   LOCATION
+========================================= */
+
+        .location-section {
+            padding: 9vw 6vw;
+
+            background: var(--beige);
+        }
+
+
+        .location-heading {
+            max-width: 650px;
+
+            margin-bottom: 55px;
+        }
+
+
+        .location-heading h2 {
+            margin-bottom: 25px;
+
+            font-size: clamp(3.5rem, 6vw, 7rem);
+            line-height: .9;
+            letter-spacing: -.055em;
+
+            color: var(--black-soft);
+        }
+
+
+        .location-heading h2 em {
+            color: var(--brown);
+        }
+
+
+        .location-heading p {
+            max-width: 480px;
+
+            color: var(--brown);
+
+            line-height: 1.8;
+        }
+
+
+        .map-box {
+            position: relative;
+
+            min-height: 560px;
+
+            overflow: hidden;
+
+            border-radius:
+            45px
+            45px
+            45px
+            150px;
+
+            background: var(--black-soft);
+        }
+
+
+        .map-box iframe {
+            display: block;
+
+            width: 100%;
+            height: 560px;
+
+            border: 0;
+
+            filter:
+            grayscale(.85)
+            sepia(.12)
+            contrast(.95);
+        }
+
+
+        .map-overlay {
+            position: absolute;
+
+            left: 28px;
+            right: 28px;
+            bottom: 28px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            padding: 25px 28px;
+
+            border-radius: 28px;
+
+            background: rgba(242, 235, 223, .94);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+
+        .map-overlay span {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: var(--brown-soft);
+
+            font-size: .62rem;
+            font-weight: 700;
+            letter-spacing: .16em;
+        }
+
+
+        .map-overlay strong {
+            display: block;
+
+            margin-bottom: 6px;
+
+            font-family: "Playfair Display", serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+        }
+
+
+        .map-overlay small {
+            display: block;
+
+            color: var(--brown);
+
+            line-height: 1.5;
+        }
+
+
+        .map-overlay a {
+            flex-shrink: 0;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 48px;
+            padding: 0 23px;
+
+            border-radius: var(--radius-pill);
+
+            background: var(--black-soft);
+            color: var(--cream);
+
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+
+            transition:
+            transform .25s ease,
+            background .25s ease;
+        }
+
+
+        .map-overlay a:hover {
+            transform: translateY(-2px);
+
+            background: var(--brown-deep);
+        }
+
+
+        /* =========================================
+   BOOKING
+========================================= */
+
+        .booking {
+            display: grid;
+            grid-template-columns: .75fr 1.25fr;
+            gap: 10vw;
+
+            padding: 10vw 8vw;
+
+            background: var(--black-soft);
+            color: var(--cream);
+        }
+
+
+        .booking-intro {
+            position: sticky;
+            top: 130px;
+
+            align-self: start;
+        }
+
+
+        .booking .section-label {
+            color: var(--beige-deep);
+        }
+
+
+        .booking-intro h2 {
+            margin-bottom: 30px;
+
+            font-size: clamp(3.3rem, 6vw, 7rem);
+            line-height: .9;
+            letter-spacing: -.055em;
+        }
+
+
+        .booking-intro h2 em {
+            display: block;
+
+            color: var(--beige);
+        }
+
+
+        .booking-intro > p {
+            max-width: 440px;
+
+            color: rgba(242, 235, 223, .68);
+
+            line-height: 1.8;
+        }
+
+
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+
+            gap: 24px;
+        }
+
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+
+            gap: 9px;
+        }
+
+
+        .form-field label {
+            color: var(--beige-deep);
+
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
+            width: 100%;
+
+            padding: 15px 0;
+
+            border: 0;
+            border-bottom: 1px solid var(--line-dark);
+            outline: none;
+
+            background: transparent;
+            color: var(--cream);
+
+            border-radius: 0;
+
+            transition:
+            border-color .25s ease,
+            padding .25s ease;
+        }
+
+
+        .form-field input::placeholder,
+        .form-field textarea::placeholder {
+            color: rgba(242, 235, 223, .38);
+        }
+
+
+        .form-field input:focus,
+        .form-field select:focus,
+        .form-field textarea:focus {
+            border-color: var(--beige);
+            padding-left: 8px;
+        }
+
+
+        .form-field select {
+            cursor: pointer;
+        }
+
+
+        .form-field select option {
+            background: var(--black-soft);
+            color: var(--cream);
+        }
+
+
+        .form-field textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 30px;
+        }
+
+
+        .booking-submit {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            min-height: 65px;
+
+            margin-top: 18px;
+
+            padding: 0 25px;
+
+            border: 0;
+            border-radius: var(--radius-pill);
+
+            background: var(--cream);
+            color: var(--black-soft);
+
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+
+            transition:
+            transform .3s var(--ease),
+            background .3s ease;
+        }
+
+
+        .booking-submit span {
+            font-size: 1.2rem;
+
+            transition: transform .3s var(--ease);
+        }
+
+
+        .booking-submit:hover {
+            transform: translateY(-3px);
+
+            background: var(--beige);
+        }
+
+
+        .booking-submit:hover span {
+            transform: translate(4px, -4px);
+        }
+
+
+        /* =========================================
+   FOOTER
+========================================= */
+
+        .footer {
+            padding: 100px 6vw 35px;
+
+            background: var(--black);
+
+            color: var(--cream);
+        }
+
+
+        .footer-main {
+            max-width: var(--container);
+
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10vw;
+
+            padding-bottom: 100px;
+        }
+
+
+        .footer-brand {
+            max-width: 560px;
+        }
+
+
+        .footer-est {
+            display: block;
+
+            margin-bottom: 20px;
+
+            color: var(--beige-deep);
+
+            font-size: .62rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+        }
+
+
+        .footer-brand h2 {
+            margin-bottom: 25px;
+
+            font-family: "Playfair Display", serif;
+            font-size: clamp(4rem, 7vw, 8rem);
+            font-weight: 400;
+            line-height: .78;
+            letter-spacing: -.06em;
+        }
+
+
+        .footer-brand h2 em {
+            display: block;
+
+            margin-left: 50px;
+
+            color: var(--beige);
+        }
+
+
+        .footer-brand p {
+            max-width: 370px;
+
+            color: rgba(242, 235, 223, .55);
+
+            font-size: .88rem;
+            line-height: 1.8;
+        }
+
+
+        .footer-navigation {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 35px;
+
+            padding-top: 10px;
+        }
+
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            gap: 13px;
+        }
+
+
+        .footer-label {
+            margin-bottom: 12px;
+
+            color: var(--beige-deep);
+
+            font-size: .6rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+        }
+
+
+        .footer-column a,
+        .footer-column > span:not(.footer-label) {
+            color: rgba(242, 235, 223, .62);
+
+            font-size: .78rem;
+
+            transition:
+            color .25s ease,
+            transform .25s ease;
+        }
+
+
+        .footer-column a:hover {
+            color: var(--cream);
+            transform: translateX(4px);
+        }
+
+
+        .footer-line {
+            max-width: var(--container);
+
+            height: 1px;
+
+            margin: 0 auto;
+
+            background: rgba(242, 235, 223, .14);
+        }
+
+
+        .footer-bottom {
+            max-width: var(--container);
+
+            margin: 0 auto;
+            padding-top: 25px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+
+            gap: 20px;
+
+            color: rgba(242, 235, 223, .38);
+
+            font-size: .6rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+
+        .footer-bottom span:nth-child(2) {
+            text-align: center;
+        }
+
+
+        .footer-bottom a {
+            justify-self: end;
+
+            color: var(--beige);
+
+            transition: color .25s ease;
+        }
+
+
+        .footer-bottom a:hover {
+            color: var(--cream);
+        }
+
+
+        /* =========================================
+   RESPONSIVE
+========================================= */
+
+        @media (max-width: 1100px) {
+
+            .nav {
+                grid-template-columns: 1fr auto;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                padding-top: 145px;
+            }
+
+            .hero-copy {
+                max-width: 800px;
+            }
+
+            .hero-image {
+                min-height: 600px;
+            }
+
+            .hero-image img {
+                height: 600px;
+            }
+
+            .home-service {
+                grid-template-columns: 1fr;
+            }
+
+            .home-service-image img {
+                height: 650px;
+            }
+
+            .section-intro {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .pricing {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .booking {
+                grid-template-columns: 1fr;
+                gap: 70px;
+            }
+
+            .booking-intro {
+                position: static;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 70px;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            body {
+                font-size: 15px;
+            }
+
+
+            .nav {
+                padding:
+                17px
+                5vw;
+            }
+
+
+            .nav.scrolled {
+                padding:
+                13px
+                5vw;
+            }
+
+
+            .brand {
+                font-size: .7rem;
+            }
+
+
+            .nav-book {
+                min-height: 38px;
+                padding: 0 15px;
+
+                font-size: .6rem;
+            }
+
+
+            .hero {
+                min-height: auto;
+
+                padding:
+                130px
+                5vw
+                70px;
+
+                gap: 55px;
+            }
+
+
+            .hero h1 {
+                font-size: clamp(3.4rem, 16vw, 5.3rem);
+            }
+
+
+            .hero-copy > p {
+                font-size: .9rem;
+            }
+
+
+            .hero-actions {
+                align-items: stretch;
+                flex-direction: column;
+
+                margin-bottom: 45px;
+            }
+
+
+            .button {
+                width: 100%;
+            }
+
+
+            .hero-meta {
+                justify-content: space-between;
+                gap: 15px;
+            }
+
+
+            .hero-meta strong {
+                font-size: 1.05rem;
+            }
+
+
+            .hero-meta span {
+                font-size: .55rem;
+            }
+
+
+            .hero-image {
+                min-height: 480px;
+            }
+
+
+            .hero-image img {
+                height: 480px;
+
+                border-radius:
+                100px
+                100px
+                25px
+                25px;
+            }
+
+
+            .price-tag {
+                right: -8px;
+                bottom: 25px;
+
+                width: 100px;
+                height: 100px;
+            }
+
+
+            .price-tag strong {
+                font-size: 1.35rem;
+            }
+
+
+            .image-flow {
+                min-height: auto;
+
+                display: flex;
+                flex-direction: column;
+
+                padding: 18vw 5vw;
+            }
+
+
+            .image-flow-main {
+                height: 500px;
+
+                border-radius:
+                30px
+                80px
+                30px
+                30px;
+            }
+
+
+            .image-flow-main img {
+                min-height: 0;
+                height: 100%;
+            }
+
+
+            .image-flow-small {
+                height: 320px;
+            }
+
+
+            .image-flow-small-top {
+                border-radius:
+                30px
+                30px
+                80px
+                30px;
+            }
+
+
+            .image-flow-small-bottom {
+                border-radius:
+                30px
+                30px
+                30px
+                80px;
+            }
+
+
+            .home-service,
+            .services,
+            .pricing {
+                padding:
+                80px
+                5vw;
+            }
+
+
+            .home-service h2,
+            .section-intro h2,
+            .pricing-copy h2 {
+                font-size: clamp(3rem, 14vw, 5rem);
+            }
+
+
+            .home-service-image img {
+                height: 500px;
+            }
+
+
+            .home-service-image {
+                border-radius:
+                90px
+                25px
+                90px
+                25px;
+            }
+
+
+            .service-item {
+                grid-template-columns: 35px 1fr;
+
+                gap: 15px;
+
+                padding: 25px 0;
+            }
+
+
+            .service-item > strong {
+                grid-column: 2;
+            }
+
+
+            .service-item h3 {
+                font-size: 1.5rem;
+            }
+
+
+            .service-item:hover {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+
+            .pricing-row {
+                padding: 21px 0;
+            }
+
+
+            .location-section {
+                padding:
+                80px
+                5vw;
+            }
+
+
+            .location-heading h2 {
+                font-size: clamp(3.5rem, 15vw, 5rem);
+            }
+
+
+            .map-box {
+                min-height: 550px;
+
+                border-radius:
+                30px
+                30px
+                30px
+                100px;
+            }
+
+
+            .map-box iframe {
+                height: 550px;
+            }
+
+
+            .map-overlay {
+                left: 14px;
+                right: 14px;
+                bottom: 14px;
+
+                align-items: stretch;
+                flex-direction: column;
+
+                padding: 20px;
+
+                border-radius: 22px;
+            }
+
+
+            .map-overlay a {
+                width: 100%;
+            }
+
+
+            .booking {
+                padding:
+                85px
+                5vw;
+            }
+
+
+            .booking-intro h2 {
+                font-size: clamp(3.4rem, 15vw, 5.5rem);
+            }
+
+
+            .form-row {
+                grid-template-columns: 1fr;
+
+                gap: 24px;
+            }
+
+
+            .booking-submit {
+                min-height: 60px;
+            }
+
+
+            .footer {
+                padding:
+                75px
+                5vw
+                28px;
+            }
+
+
+            .footer-main {
+                padding-bottom: 65px;
+            }
+
+
+            .footer-brand h2 {
+                font-size: clamp(4rem, 17vw, 6rem);
+            }
+
+
+            .footer-brand h2 em {
+                margin-left: 25px;
+            }
+
+
+            .footer-navigation {
+                grid-template-columns: 1fr 1fr;
+                gap: 45px 25px;
+            }
+
+
+            .footer-column:last-child {
+                grid-column: 1 / -1;
+            }
+
+
+            .footer-bottom {
+                grid-template-columns: 1fr;
+
+                gap: 13px;
+
+                padding-top: 22px;
+            }
+
+
+            .footer-bottom span:nth-child(2) {
+                text-align: left;
+            }
+
+
+            .footer-bottom a {
+                justify-self: start;
+            }
+
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <nav class="nav" id="nav">
+            <a href="#" class="brand">
+                ONE HAIRSTUDIO
+            </a>
+
+            <div class="nav-links">
+                <a href="#home-service">Home Service</a>
+                <a href="#services">Layanan</a>
+                <a href="#pricing">Harga</a>
+                <a href="#location">Lokasi</a>
+            </div>
+
+            <a href="#booking" class="nav-book">
+                BOOK NOW
+            </a>
+        </nav>
+
+
+        <main>
+
+            <section class="hero">
+
+                <div class="hero-copy">
+
+                    <span class="eyebrow">
+                        EST. 2016 · HOME SERVICE
+                    </span>
+
+                    <h1>
+                        Potong rambut
+                        <em>di tempat Anda.</em>
+                    </h1>
+
+                    <p>
+                        Layanan haircut dan styling yang datang langsung
+                        ke rumah. Praktis, nyaman, dan tetap rapi.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#booking" class="button button-dark">
+                            BOOK HOME SERVICE
+                        </a>
+
+                        <a href="#services" class="button button-light">
+                            LIHAT LAYANAN
+                        </a>
+                    </div>
+
+                    <div class="hero-meta">
+
+                        <div>
+                            <strong>Rp50K+</strong>
+                            <span>Mulai dari</span>
+                        </div>
+
+                        <div>
+                            <strong>2016</strong>
+                            <span>Sejak</span>
+                        </div>
+
+                        <div>
+                            <strong>01 : 01</strong>
+                            <span>Personal service</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-image">
+
+                    <img
+                    src="https://res.cloudinary.com/dzxhnvu4a/image/upload/v1769348185/IMG-20260125-WA0012_1_xv9tzy.jpg"
+                    alt="ONE HAIRSTUDIO Home Service"
+                    >
+
+                    <div class="price-tag">
+                        <span>STARTING</span>
+                        <strong>Rp50K</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="image-flow">
+
+                <div class="image-flow-main">
+                    <img
+                    src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1300&q=85"
+                    alt="Hair studio"
+                    >
+                </div>
+
+                <div class="image-flow-small image-flow-small-top">
+                    <img
+                    src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85"
+                    alt="Haircut service"
+                    >
+                </div>
+
+                <div class="image-flow-small image-flow-small-bottom">
+                    <img
+                    src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=85"
+                    alt="Barber service"
+                    >
+                </div>
+
+            </section>
+
+
+            <section class="home-service" id="home-service">
+
+                <div class="home-service-copy">
+
+                    <span class="section-label">
+                        HOME SERVICE
+                    </span>
+
+                    <h2>
+                        Anda di rumah.
+                        <em>Kami yang datang.</em>
+                    </h2>
+
+                    <p>
+                        Tidak perlu keluar rumah atau antre.
+                        Tentukan waktu dan lokasi, lalu kami datang
+                        untuk memberikan layanan langsung di tempat Anda.
+                    </p>
+
+                    <div class="service-points">
+
+                        <div>
+                            <span>01</span>
+                            <strong>Datang ke lokasi</strong>
+                            <p>
+                                Rumah, kantor, atau tempat yang Anda pilih.
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>02</span>
+                            <strong>Pilih waktu</strong>
+                            <p>
+                                Sesuaikan jadwal dengan aktivitas Anda.
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>03</span>
+                            <strong>Relax &amp; enjoy</strong>
+                            <p>
+                                Kami menangani haircut dan styling Anda.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <a href="#booking" class="text-link">
+                        BUAT BOOKING
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+
+                <div class="home-service-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1100&q=85"
+                    alt="Home Service haircut"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <section class="services" id="services">
+
+                <div class="section-intro">
+
+                    <span class="section-label">
+                        OUR SERVICES
+                    </span>
+
+                    <h2>
+                        Simple.
+                        <em>Clean.</em>
+                        Personal.
+                    </h2>
+
+                </div>
+
+
+                <div class="service-list">
+
+                    <div class="service-item">
+
+                        <span class="service-number">01</span>
+
+                        <div>
+                            <h3>Haircut</h3>
+                            <p>
+                                Potongan rambut sesuai gaya dan bentuk wajah.
+                            </p>
+                        </div>
+
+                        <strong>Rp50K</strong>
+
+                    </div>
+
+
+                    <div class="service-item">
+
+                        <span class="service-number">02</span>
+
+                        <div>
+                            <h3>Haircut + Styling</h3>
+                            <p>
+                                Haircut sekaligus styling untuk tampilan yang lebih rapi.
+                            </p>
+                        </div>
+
+                        <strong>Rp75K</strong>
+
+                    </div>
+
+
+                    <div class="service-item">
+
+                        <span class="service-number">03</span>
+
+                        <div>
+                            <h3>Styling</h3>
+                            <p>
+                                Styling rambut untuk kebutuhan harian maupun acara.
+                            </p>
+                        </div>
+
+                        <strong>Rp40K</strong>
+
+                    </div>
+
+
+                    <div class="service-item">
+
+                        <span class="service-number">04</span>
+
+                        <div>
+                            <h3>Home Service</h3>
+                            <p>
+                                Layanan datang langsung ke lokasi pilihan Anda.
+                            </p>
+                        </div>
+
+                        <strong>From 50K</strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="pricing" id="pricing">
+
+                <div class="pricing-copy">
+
+                    <span class="section-label">
+                        PRICE LIST
+                    </span>
+
+                    <h2>
+                        Harga yang
+                        <em>simple.</em>
+                    </h2>
+
+                    <p>
+                        Mulai dari Rp50K. Harga dapat menyesuaikan
+                        layanan dan lokasi home service.
+                    </p>
+
+                </div>
+
+
+                <div class="pricing-list">
+
+                    <div class="pricing-row">
+                        <span>Haircut</span>
+                        <strong>Rp50K</strong>
+                    </div>
+
+                    <div class="pricing-row">
+                        <span>Haircut + Styling</span>
+                        <strong>Rp75K</strong>
+                    </div>
+
+                    <div class="pricing-row">
+                        <span>Styling</span>
+                        <strong>Rp40K</strong>
+                    </div>
+
+                    <div class="pricing-row">
+                        <span>Home Service</span>
+                        <strong>From Rp50K</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="location-section" id="location">
+
+                <div class="location-heading">
+
+                    <span class="section-label">
+                        LOCATION
+                    </span>
+
+                    <h2>
+                        Temukan
+                        <em>kami.</em>
+                    </h2>
+
+                    <p>
+                        Lihat lokasi kami di Google Maps atau gunakan
+                        petunjuk arah langsung dari perangkat Anda.
+                    </p>
+
+                </div>
+
+
+                <div class="map-box">
+
+                    <iframe
+                        src="https://www.google.com/maps?q=Pulang%20pulang%20Ganteng16%2C%20Jampue%2C%20Kec.%20Lanrisang%2C%20Kabupaten%20Pinrang%2C%20Sulawesi%20Selatan%2091218&output=embed"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+
+                    <div class="map-overlay">
+
+                        <div>
+
+                            <span>ONE HAIRSTUDIO</span>
+
+                            <strong>
+                                Pulang pulang Ganteng16
+                            </strong>
+
+                            <small>
+                                Jampue, Lanrisang<br>
+                                Kabupaten Pinrang, Sulawesi Selatan
+                            </small>
+
+                        </div>
+
+                        <a
+                            href="https://maps.app.goo.gl/HFNwGyfUTMakUjjK7?g_st=ac"
+                            target="_blank"
+                            rel="noopener">
+                            OPEN MAP
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="booking" id="booking">
+
+                <div class="booking-intro">
+
+                    <span class="section-label">
+                        BOOKING
+                    </span>
+
+                    <h2>
+                        Ready for
+                        <em>your next cut?</em>
+                    </h2>
+
+                    <p>
+                        Isi form singkat di samping.
+                        Detail booking akan langsung diteruskan
+                        ke WhatsApp kami.
+                    </p>
+
+                </div>
+
+
+                <form class="booking-form" id="bookingForm">
+
+                    <div class="form-field">
+
+                        <label for="name">
+                            Nama
+                        </label>
+
+                        <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Nama Anda"
+                        required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="phone">
+                            WhatsApp
+                        </label>
+
+                        <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="08xxxxxxxxxx"
+                        required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="address">
+                            Lokasi
+                        </label>
+
+                        <input
+                        type="text"
+                        id="address"
+                        name="address"
+                        placeholder="Alamat home service"
+                        required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="service">
+                            Layanan
+                        </label>
+
+                        <select
+                            id="service"
+                            name="service"
+                            required
+                            >
+                            <option value="" selected disabled>
+                                Pilih layanan
+                            </option>
+
+                            <option value="Haircut">
+                                Haircut — Rp50K
+                            </option>
+
+                            <option value="Haircut + Styling">
+                                Haircut + Styling — Rp75K
+                            </option>
+
+                            <option value="Styling">
+                                Styling — Rp40K
+                            </option>
+
+                            <option value="Home Service">
+                                Home Service — From Rp50K
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-field">
+
+                            <label for="date">
+                                Tanggal
+                            </label>
+
+                            <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="time">
+                                Jam
+                            </label>
+
+                            <input
+                            type="time"
+                            id="time"
+                            name="time"
+                            required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="note">
+                            Catatan
+                        </label>
+
+                        <textarea
+                            id="note"
+                            name="note"
+                            rows="4"
+                            placeholder="Tambahkan catatan jika diperlukan"
+                            ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="booking-submit">
+                        LANJUT KE WHATSAPP
+                        <span>↗</span>
+                    </button>
+
+                </form>
+
+            </section>
+
+        </main>
+
+
+        <footer class="footer">
+
+            <div class="footer-main">
+
+                <div class="footer-brand">
+
+                    <span class="footer-est">
+                        EST. 2016
+                    </span>
+
+                    <h2>
+                        ONE
+                        <em>HAIRSTUDIO</em>
+                    </h2>
+
+                    <p>
+                        Haircut &amp; styling yang datang
+                        langsung ke tempat Anda.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-navigation">
+
+                    <div class="footer-column">
+
+                        <span class="footer-label">
+                            EXPLORE
+                        </span>
+
+                        <a href="#home-service">
+                            Home Service
+                        </a>
+
+                        <a href="#services">
+                            Layanan
+                        </a>
+
+                        <a href="#pricing">
+                            Harga
+                        </a>
+
+                        <a href="#location">
+                            Lokasi
+                        </a>
+
+                    </div>
+
+
+                    <div class="footer-column">
+
+                        <span class="footer-label">
+                            CONTACT
+                        </span>
+
+                        <a href="#booking">
+                            Booking
+                        </a>
+
+                        <a
+                            href="https://wa.me/6282271391251"
+                            target="_blank"
+                            rel="noopener">
+                            WhatsApp
+                        </a>
+
+                        <a
+                            href="https://maps.app.goo.gl/HFNwGyfUTMakUjjK7?g_st=ac"
+                            target="_blank"
+                            rel="noopener">
+                            Google Maps
+                        </a>
+
+                    </div>
+
+
+                    <div class="footer-column">
+
+                        <span class="footer-label">
+                            HOURS
+                        </span>
+
+                        <span>
+                            By appointment
+                        </span>
+
+                        <span>
+                            Home Service
+                        </span>
+
+                        <span>
+                            7 days a week
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-line"></div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 ONE HAIRSTUDIO
+                </span>
+
+                <span>
+                    MADE FOR GOOD HAIR DAYS
+                </span>
+
+                <a href="#nav">
+                    BACK TO TOP ↑
+                </a>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <script>
+
+        const nav = document.getElementById("nav");
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 20) {
+                nav.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+            }
+
+        });
+
+
+        const bookingForm = document.getElementById("bookingForm");
+
+        const WHATSAPP_NUMBER = "6282271391251";
+
+
+        bookingForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const name =
+            document.getElementById("name").value.trim();
+
+            const phone =
+            document.getElementById("phone").value.trim();
+
+            const address =
+            document.getElementById("address").value.trim();
+
+            const service =
+            document.getElementById("service").value;
+
+            const date =
+            document.getElementById("date").value;
+
+            const time =
+            document.getElementById("time").value;
+
+            const note =
+            document.getElementById("note").value.trim();
+
+
+            const message =
+            `Halo ONE HAIRSTUDIO,
+
+            Saya ingin melakukan booking Home Service.
+
+            Nama: ${name}
+            WhatsApp: ${phone}
+            Lokasi: ${address}
+            Layanan: ${service}
+            Tanggal: ${date}
+            Jam: ${time}
+            Catatan: ${note || "-"}
+
+            Mohon konfirmasi ketersediaannya.
+
+            Terima kasih.`;
+
+
+            const whatsappURL =
+            "https://wa.me/6282271391251" +
+            WHATSAPP_NUMBER +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+            window.location.href = whatsappURL;
+
+        });
+
+    </script>
+
+</body>
+</html>
