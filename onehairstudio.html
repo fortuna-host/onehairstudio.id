@@ -1,0 +1,1054 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#18120F">
+
+  <title>ONE HAIRSTUDIO — Men's Grooming</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #18120F;
+      --surface: #261A17;
+      --surface-light: #30211D;
+
+      --text: #E5D9CB;
+      --muted: #A99A8C;
+
+      --accent: #B69A7C;
+      --burgundy: #431D25;
+      --burgundy-light: #70404A;
+
+      --line: rgba(229, 217, 203, .12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(24, 18, 15, .85);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-name {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .brand-subtitle {
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 3px;
+      margin-top: 2px;
+    }
+
+    .header-label {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 610px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+      padding: 75px 0;
+    }
+
+    .hero-content {
+      max-width: 500px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(44px, 6vw, 72px);
+      line-height: 1.08;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 410px;
+      margin-bottom: 35px;
+      line-height: 1.9;
+    }
+
+    /* HERO IDENTITY */
+
+    .hero-media {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 420px;
+      position: relative;
+    }
+
+    .hero-media img {
+      width: min(100%, 410px);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 28px;
+
+      border: 1px solid rgba(182, 154, 124, .28);
+
+      box-shadow:
+        0 30px 90px rgba(0, 0, 0, .48),
+        0 0 50px rgba(67, 29, 37, .18);
+    }
+
+    .hero-media::before {
+      content: "";
+      position: absolute;
+      width: min(100%, 430px);
+      aspect-ratio: 1 / 1;
+
+      border: 1px solid rgba(182, 154, 124, .16);
+      border-radius: 34px;
+
+      pointer-events: none;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      font-size: 12px;
+      letter-spacing: 1px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--accent);
+      transition: color .25s;
+    }
+
+    .text-link:hover {
+      color: var(--accent);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      margin-bottom: 45px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 46px);
+      font-weight: 500;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    /* SERVICES */
+
+    .service-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .service-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 25px 5px;
+      border-bottom: 1px solid var(--line);
+      transition: padding .3s ease;
+    }
+
+    .service-item:hover {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .service-item h3 {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .service-item p {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    .service-price {
+      color: var(--accent);
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* GALLERY */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 14px;
+      filter: saturate(.65) brightness(.85);
+
+      transition:
+        filter .3s,
+        transform .3s;
+    }
+
+    .gallery img:hover {
+      filter: saturate(.9) brightness(1);
+      transform: translateY(-4px);
+    }
+
+    /* HOME SERVICE */
+
+    .home-service {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .home-service img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      border-radius: 20px;
+      filter: saturate(.65) brightness(.85);
+    }
+
+    .home-service h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      line-height: 1.2;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .home-service p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    /* BOOKING */
+
+    .booking-section {
+      background:
+        radial-gradient(
+          circle at 85% 15%,
+          rgba(67, 29, 37, .38),
+          transparent 45%
+        ),
+        var(--surface);
+    }
+
+    .booking-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 70px;
+    }
+
+    .booking-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .booking-info p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+      margin-bottom: 25px;
+    }
+
+    .contact-detail {
+      padding: 17px 0;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+    }
+
+    .contact-detail span {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    .booking-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 0;
+      color: var(--text);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      outline: none;
+      font-family: inherit;
+      font-size: 13px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-group select option {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 75px;
+    }
+
+    .submit-button {
+      grid-column: 1 / -1;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      padding: 13px 25px;
+
+      color: var(--text);
+      background: var(--burgundy);
+      border: 1px solid var(--burgundy);
+      border-radius: 100px;
+
+      font-family: inherit;
+      font-size: 11px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .submit-button:hover {
+      background: transparent;
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* LOCATION */
+
+    .location-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .location-content p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 300px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      filter: grayscale(1) contrast(.9);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* FLOATING GLASS ORDER BUTTON */
+
+    .floating-book {
+      position: fixed;
+      z-index: 100;
+      bottom: max(18px, env(safe-area-inset-bottom));
+      left: 50%;
+      transform: translateX(-50%);
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      padding: 13px 25px;
+
+      color: var(--text);
+      background: rgba(38, 26, 23, .68);
+
+      border: 1px solid rgba(182, 154, 124, .25);
+      border-radius: 100px;
+
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+
+      backdrop-filter: blur(24px) saturate(140%);
+      -webkit-backdrop-filter: blur(24px) saturate(140%);
+
+      box-shadow:
+        0 8px 30px rgba(0, 0, 0, .3),
+        inset 0 1px 0 rgba(255, 255, 255, .08);
+
+      transition:
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease,
+        color .3s ease;
+
+      white-space: nowrap;
+    }
+
+    .floating-book::after {
+      content: "↗";
+      font-size: 13px;
+      color: var(--accent);
+      transition: transform .3s ease;
+    }
+
+    .floating-book:hover {
+      background: rgba(67, 29, 37, .82);
+      border-color: rgba(182, 154, 124, .45);
+      color: #fff;
+
+      box-shadow:
+        0 8px 35px rgba(0, 0, 0, .35),
+        inset 0 1px 0 rgba(255, 255, 255, .12);
+    }
+
+    .floating-book:hover::after {
+      transform: translate(2px, -2px);
+    }
+
+    .floating-book:active {
+      transform: translateX(-50%) scale(.97);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 760px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 60px 0;
+      }
+
+      .hero-content {
+        order: 2;
+      }
+
+      .hero-media {
+        order: 1;
+        min-height: 280px;
+      }
+
+      .hero-media img {
+        width: min(75%, 300px);
+        border-radius: 24px;
+      }
+
+      .hero-media::before {
+        width: min(80%, 320px);
+        border-radius: 30px;
+      }
+
+      .hero h1 {
+        font-size: 49px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery img {
+        height: 220px;
+      }
+
+      .gallery img:first-child {
+        grid-column: 1 / -1;
+        height: 260px;
+      }
+
+      .home-service,
+      .booking-layout,
+      .location-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .home-service img {
+        height: 280px;
+      }
+
+      .booking-layout {
+        gap: 40px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+
+      .header-label {
+        font-size: 8px;
+        text-align: right;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .booking-form {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group {
+        grid-column: 1 / -1;
+      }
+
+      .service-item {
+        gap: 10px;
+      }
+
+      .service-item h3 {
+        font-size: 13px;
+      }
+
+      .service-price {
+        font-size: 12px;
+      }
+
+      .floating-book {
+        padding: 12px 22px;
+        font-size: 10px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container brand">
+      <div>
+        <div class="brand-name">ONE HAIRSTUDIO</div>
+        <div class="brand-subtitle">MEN'S GROOMING</div>
+      </div>
+
+      <div class="header-label">
+        PINRANG · SULAWESI SELATAN
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <div class="container">
+      <section class="hero" style="border:0">
+
+        <div class="hero-content">
+          <div class="eyebrow">
+            Men's Grooming Experience
+          </div>
+
+          <h1>
+            Lebih dari sekadar <span>potongan.</span>
+          </h1>
+
+          <p class="hero-description">
+            Tampil rapi, percaya diri, dan nyaman dengan layanan grooming
+            profesional dari ONE HAIRSTUDIO. Kami hadir untuk memberikan
+            pengalaman perawatan rambut terbaik bagi pria.
+          </p>
+
+          <a href="#booking" class="text-link">
+            Buat janji sekarang <span>→</span>
+          </a>
+        </div>
+
+        <div class="hero-media">
+          <img
+            src="https://res.cloudinary.com/eipt55eo/image/upload/v1794138312/8155b021-d827-474d-ab8e-7e3e12a8ce7d.jpg"
+            alt="Logo ONE HAIRSTUDIO"
+          >
+        </div>
+
+      </section>
+    </div>
+
+    <!-- SERVICES -->
+
+    <section id="services">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Layanan Kami</div>
+          <h2>Grooming yang tepat.</h2>
+          <p>
+            Pilihan layanan untuk menunjang penampilan terbaik Anda.
+          </p>
+        </div>
+
+        <div class="service-list">
+
+          <div class="service-item">
+            <div>
+              <h3>Men's Haircut</h3>
+              <p>Potongan rambut pria sesuai karakter dan gaya Anda.</p>
+            </div>
+            <div class="service-price">Mulai Rp15.000</div>
+          </div>
+
+          <div class="service-item">
+            <div>
+              <h3>Haircut + Styling</h3>
+              <p>Potong rambut dilengkapi penataan gaya.</p>
+            </div>
+            <div class="service-price">Rp75.000</div>
+          </div>
+
+          <div class="service-item">
+            <div>
+              <h3>Hair Styling</h3>
+              <p>Penataan rambut untuk tampilan yang lebih maksimal.</p>
+            </div>
+            <div class="service-price">Rp40.000</div>
+          </div>
+
+          <div class="service-item">
+            <div>
+              <h3>Home Service Individual</h3>
+              <p>Layanan grooming langsung ke lokasi Anda.</p>
+            </div>
+            <div class="service-price">Rp50.000</div>
+          </div>
+
+          <div class="service-item">
+            <div>
+              <h3>Home Service Group</h3>
+              <p>Paket untuk tiga orang, lebih praktis bersama teman.</p>
+            </div>
+            <div class="service-price">Rp90.000</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+
+    <section id="gallery">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Our Atmosphere</div>
+          <h2>Detail yang berbicara.</h2>
+          <p>Inspirasi gaya dan pengalaman grooming.</p>
+        </div>
+
+        <div class="gallery">
+
+          <img
+            src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1300&q=85"
+            alt="Suasana barbershop"
+            loading="lazy"
+          >
+
+          <img
+            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85"
+            alt="Layanan barber"
+            loading="lazy"
+          >
+
+          <img
+            src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=85"
+            alt="Gaya rambut pria"
+            loading="lazy"
+          >
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOME SERVICE -->
+
+    <section>
+      <div class="container home-service">
+
+        <img
+          src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1100&q=85"
+          alt="Layanan home service barber"
+          loading="lazy"
+        >
+
+        <div>
+          <div class="eyebrow">Home Service</div>
+
+          <h2>
+            Grooming tanpa harus keluar rumah.
+          </h2>
+
+          <p>
+            Tidak sempat datang ke tempat kami? ONE HAIRSTUDIO menyediakan
+            layanan home service untuk memberikan kenyamanan grooming
+            langsung di lokasi Anda.
+          </p>
+
+          <p>
+            Tersedia layanan individual maupun grup untuk tiga orang.
+          </p>
+
+          <a href="#booking" class="text-link">
+            Pesan layanan <span>→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+
+    <section class="booking-section" id="booking">
+      <div class="container booking-layout">
+
+        <div class="booking-info">
+          <div class="eyebrow">Reservasi</div>
+
+          <h2>
+            Atur jadwal grooming Anda.
+          </h2>
+
+          <p>
+            Isi formulir reservasi berikut. Tim kami akan menerima detail
+            pesanan Anda melalui WhatsApp untuk konfirmasi lebih lanjut.
+          </p>
+
+          <div class="contact-detail">
+            <span>WhatsApp</span>
+            +62 822-7139-1251
+          </div>
+
+          <div class="contact-detail">
+            <span>Lokasi</span>
+            Jampue, Lanrisang, Kabupaten Pinrang
+          </div>
+        </div>
+
+        <form class="booking-form" id="bookingForm">
+
+          <div class="form-group">
+            <label for="name">Nama lengkap</label>
+            <input
+              type="text"
+              id="name"
+              required
+              placeholder="Nama Anda"
+              autocomplete="name"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Nomor telepon</label>
+            <input
+              type="tel"
+              id="phone"
+              required
+              placeholder="08xxxxxxxxxx"
+              autocomplete="tel"
+            >
+          </div>
+
+          <div class="form-group full">
+            <label for="address">Alamat / lokasi layanan</label>
+            <input
+              type="text"
+              id="address"
+              placeholder="Alamat Anda"
+              autocomplete="street-address"
+            >
+          </div>
+
+          <div class="form-group full">
+            <label for="service">Pilih layanan</label>
+
+            <select id="service" required>
+              <option value="">Pilih layanan</option>
+              <option>Men's Haircut — Mulai Rp15.000</option>
+              <option>Haircut + Styling — Rp75.000</option>
+              <option>Hair Styling — Rp40.000</option>
+              <option>Home Service Individual — Rp50.000</option>
+              <option>Home Service Group — Rp90.000 / 3 orang</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="date">Tanggal reservasi</label>
+            <input type="date" id="date" required>
+          </div>
+
+          <div class="form-group">
+            <label for="time">Waktu reservasi</label>
+            <input type="time" id="time" required>
+          </div>
+
+          <div class="form-group full">
+            <label for="notes">Catatan tambahan</label>
+            <textarea
+              id="notes"
+              placeholder="Tambahkan permintaan khusus jika ada"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-button">
+            KIRIM RESERVASI →
+          </button>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+
+    <section id="location">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Temukan Kami</div>
+          <h2>Kunjungi ONE HAIRSTUDIO.</h2>
+        </div>
+
+        <div class="location-content">
+
+          <div>
+            <p>
+              Pulang pulang Ganteng16, Jampue, Lanrisang,
+              Kabupaten Pinrang, Sulawesi Selatan 91218.
+            </p>
+
+            <a
+              class="text-link"
+              href="https://maps.app.goo.gl/rYvnW2vjpmoTNWLj8?g_st=ac"
+              target="_blank"
+              rel="noopener"
+            >
+              Buka Google Maps <span>↗</span>
+            </a>
+          </div>
+
+          <iframe
+            class="map-frame"
+            src="https://maps.google.com/maps?q=Jampue%2C%20Lanrisang%2C%20Kabupaten%20Pinrang&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            title="Lokasi ONE HAIRSTUDIO"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container footer-content">
+      <div>
+        © 2026 ONE HAIRSTUDIO. Hak cipta dilindungi.
+      </div>
+
+      <div>
+        MEN'S GROOMING · PINRANG
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING ORDER BUTTON -->
+
+  <a href="#booking" class="floating-book">
+    ORDER NOW
+  </a>
+
+  <!-- WHATSAPP BOOKING SCRIPT -->
+
+  <script>
+    const bookingForm = document.getElementById('bookingForm');
+    const dateInput = document.getElementById('date');
+
+    // Prevent selecting past dates
+    const today = new Date();
+
+    const localToday = new Date(
+      today.getTime() - today.getTimezoneOffset() * 60000
+    ).toISOString().split('T')[0];
+
+    dateInput.min = localToday;
+
+    bookingForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const service = document.getElementById('service').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const notes = document.getElementById('notes').value.trim();
+
+      const message = `
+*RESERVASI ONE HAIRSTUDIO*
+
+Nama: ${name}
+Nomor Telepon: ${phone}
+Alamat: ${address || '-'}
+Layanan: ${service}
+Tanggal: ${date}
+Waktu: ${time}
+Catatan: ${notes || '-'}
+
+Mohon konfirmasi ketersediaan jadwal reservasi saya.
+      `.trim();
+
+      const whatsappURL =
+        'https://wa.me/6282271391251?text=' +
+        encodeURIComponent(message);
+
+      window.open(whatsappURL, '_blank');
+    });
+  </script>
+
+</body>
+</html>
